@@ -99,7 +99,7 @@ btnTinhTien.onclick = function () {
 
     document.getElementById('total').innerHTML = "Tiền xe : " + formated.format(total) ;
 
-    document.getElementById('soKm').innerHTML = '1' ;
+    document.getElementById('soKm_first').innerHTML = '1' ;
     document.getElementById('giaXeMoc_1').innerHTML = giaXeMoc_1 ;
     document.getElementById('money_1').innerHTML = money_1 ;
 
