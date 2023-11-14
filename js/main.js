@@ -20,6 +20,7 @@ var money_3 = 0;
 var giaMoc1 = 0;
 var giaMoc2 = 0;
 var giaMoc3 = 0;
+var giaWait = 0;
 var money_wait = 0;
 var total = 0;
 
@@ -69,6 +70,7 @@ function carPayment(
     // console.log("giaXeMoc_1: ", giaXeMoc_1);
     // ở đây
     giaMoc1 = giaXeMoc_1;
+    giaWait = giaXe_wait;
     money_1 = bill_1(soKm, giaXeMoc_1);
     money_wait = bill_wait(timeWait, giaXe_wait);
     total = money_1 + money_wait;
@@ -77,6 +79,7 @@ function carPayment(
     // ở đây
     giaMoc1 = giaXeMoc_1;
     giaMoc2 = giaXeMoc_2;
+    giaWait = giaXe_wait;
     money_1 = bill_1(1, giaXeMoc_1);
     money_2 = bill_2(soKm, giaXeMoc_2);
     money_wait = bill_wait(timeWait, giaXe_wait);
@@ -86,6 +89,7 @@ function carPayment(
     giaMoc1 = giaXeMoc_1;
     giaMoc2 = giaXeMoc_2;
     giaMoc3 = giaXeMoc_3;
+    giaWait = giaXe_wait;
     money_1 = bill_1(1, giaXeMoc_1);
     money_2 = bill_2(19, giaXeMoc_2);
     money_3 = bill_3(soKm, giaXeMoc_3);
@@ -138,10 +142,11 @@ btnTinhTien.onclick = function () {
 
   const config = { style: "currency", currency: "VND" };
   const formated = new Intl.NumberFormat("vi-VN", config);
-  console.log("giaMoc3: ", giaMoc3);
-  console.log("giaMoc2 ", giaMoc2);
-  console.log("giaMoc1: ", giaMoc1);
-  console.log("timeWait: ", timeWait);
+
+  // console.log("giaMoc3: ", giaMoc3);
+  // console.log("giaMoc2 ", giaMoc2);
+  // console.log("giaMoc1: ", giaMoc1);
+  // console.log("timeWait: ", timeWait);
 
   document.getElementById("total").innerHTML =
     "Tiền xe : " + formated.format(total);
@@ -158,8 +163,8 @@ btnTinhTien.onclick = function () {
   document.getElementById("giaXeMoc_3").innerHTML = giaMoc3;
   document.getElementById("money_3").innerHTML = money_3;
   // cái này trùng id nên k in ra được a check dòng này bên html và sửa lại id nhé
-  document.getElementById("timeWait").innerHTML = timeWait;
-  document.getElementById("giaXe_wait").innerHTML = giaXe_wait;
+  document.getElementById("timeWait_print").innerHTML = timeWait;
+  document.getElementById("giaXe_wait").innerHTML = giaWait;
   document.getElementById("money_wait").innerHTML = money_wait;
 
   document.getElementById("totalModal").innerHTML = formated.format(total);
